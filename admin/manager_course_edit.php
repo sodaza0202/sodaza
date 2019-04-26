@@ -73,7 +73,7 @@ if($_SESSION['Status'] != "1")
                 <div class="form-group">
                     <label for="">ราคา</label>
                     <input type="text" class="form-control" id="" placeholder="" value="<?php echo $row["course_price"]; ?>" name="course_price">
-                    <input type="hidden" class="form-control" id="" placeholder="" value="<?php echo $row["course_price"]; ?>" name="id">
+                    <input type="hidden" class="form-control" id="" placeholder="" value="<?php echo $row["course_id"]; ?>" name="id">
                 </div>
                 <button type="submit" class="btn btn-warning btn-block" name="submit_course"><i class="fas fa-pen-square"></i> แก้ไขคอร์ส</button>
             </form>
