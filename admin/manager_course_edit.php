@@ -21,22 +21,6 @@ if($_SESSION['Status'] != "1")
                 $sql_category = "SELECT * FROM course INNER JOIN category ON course.course_category = category.c_id WHERE course.course_id = '".$id."'";
                 $result = $conn->query($sql_category); 
                 $row = mysqli_fetch_assoc($result);
-
-                if(isset($_POST['submit_course'])){ 
-                  if (!empty($_POST['course_name'])) {  
-                      $course_name = $_POST['course_name'];
-                      $course_category = $_POST['course_category'];
-                      $course_section = $_POST['course_section'];
-                      $course_age = $_POST['course_age'];
-                      $course_price = $_POST['course_price'];
-              
-                      $sql2 = "UPDATE course SET course_name = '".$course_name."' , course_category = '".$course_category."',course_section = '".$course_section."' ,  course_age = '".$course_age."' ,  course_price = '".$course_price."' WHERE course_id = '".$id."' ";
-                      if (mysqli_query($conn, $sql2)) {
-                        header('Location: manager_course.php');
-                        exit;  
-                      }  
-                  }
-              }
           ?>
 
 
@@ -59,7 +43,7 @@ if($_SESSION['Status'] != "1")
         
 		<div class="container">
         	<div class="justify-content-md-center ">
-            <form name="edit_course" method="post">
+            <form name="edit_course" method="POST" action="c_edit.php">
             <div class="form-group">
                     <label for="">ลำดับ</label>
                     <input type="text" class="form-control" id="" placeholder="" disabled value="<?php echo $row["course_id"]; ?>">
@@ -89,8 +73,9 @@ if($_SESSION['Status'] != "1")
                 <div class="form-group">
                     <label for="">ราคา</label>
                     <input type="text" class="form-control" id="" placeholder="" value="<?php echo $row["course_price"]; ?>" name="course_price">
+                    <input type="hidden" class="form-control" id="" placeholder="" value="<?php echo $row["course_price"]; ?>" name="id">
                 </div>
-                <button type="submit" class="btn btn-warning btn-block" name="submit_course"><i class="fas fa-pen-square"></i> แก้ไขสมาชิก</button>
+                <button type="submit" class="btn btn-warning btn-block" name="submit_course"><i class="fas fa-pen-square"></i> แก้ไขคอร์ส</button>
             </form>
 
            </div>

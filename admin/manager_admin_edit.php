@@ -37,7 +37,7 @@ if($_SESSION['Status'] != "1")
         
 		<div class="container">
         	<div class="justify-content-md-center ">
-            <form>
+            <form action="admin_edit.php" method="post">
             <div class="form-group">
                     <label for="">ลำดับ</label>
                     <input type="text" class="form-control" id="" placeholder="" disabled>
