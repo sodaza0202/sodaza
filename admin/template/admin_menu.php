@@ -41,19 +41,7 @@
           <div class="dropdown-divider"></div>
         </div>
       </li>
-      <li class="nav-item dropdown show">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>จัดการบทความ</span>
-        </a>
-        <div class="dropdown-menu show" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">จัดการบทความ:</h6>
-          <a class="dropdown-item" href=""><i class="fas fa-plus-square"></i> จัดการบทความ</a>
-          <h6 class="dropdown-header">จัดการประเภท:</h6>
-          <a class="dropdown-item" href=""><i class="fas fa-plus-square"></i> จัดการประเภทบทความ</a>
-          <div class="dropdown-divider"></div>
-        </div>
-      </li>
+    
       <li class="nav-item dropdown show">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
