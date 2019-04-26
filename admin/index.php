@@ -19,12 +19,12 @@
                     <div class="card-body">
                         <form action="check_login.php" autocomplete="off" method="POST">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="username" placeholder="Username">
+                                <input type="text" class="form-control" name="txtUsername" placeholder="Username">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" placeholder="Password">
+                                <input type="password" class="form-control" name="txtPassword" placeholder="Password">
                             </div>
-                            <button type="button" id="sendlogin" class="btn btn-primary btn-block">เข้าสู่ระบบบบบบ</button>
+                            <button type="submit" id="sendlogin" class="btn btn-primary btn-block">เข้าสู่ระบบ</button>
                         </form>
                     </div>
                 </div>
