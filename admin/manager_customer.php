@@ -28,7 +28,7 @@ if(isset($_POST['submit_customer'])){
         $tel = $_POST['tel'];
         $gender = $_POST['gender'];
 
-        $sql = "INSERT INTO member (m_id,m_user,m_pass,m_namea,m_nameb,m_tel,m_gender,m_level) VALUES (NULL ,'".$username."','".$password."','".$namea."','".$nameb."','".$tel."','".$gender."' , 1)";
+        $sql = "INSERT INTO member (m_id,m_user,m_pass,m_namea,m_nameb,m_tel,m_gender,m_level) VALUES (NULL ,'".$username."','".$password."','".$namea."','".$nameb."','".$tel."','".$gender."' , 2)";
         $query = mysqli_query($conn,$sql);
         header('Location: manager_customer.php');
         exit;    
@@ -70,7 +70,7 @@ if(isset($_POST['submit_customer'])){
           </thead>
           <tbody>
           <?php
-                $sql_category = "SELECT * FROM member WHERE m_level = 1";
+                $sql_category = "SELECT * FROM member WHERE m_level = 2";
                 $result = $conn->query($sql_category); 
                 if ($result->num_rows > 0) { 
                 while($row = $result->fetch_assoc()) {
