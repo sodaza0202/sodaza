@@ -17,6 +17,12 @@ if($_SESSION['Status'] != "1")
 ?>
   <?php include('template/admin_header.php');?>
 
+  <?php
+                $id = $_GET['id'];
+                $sql_category = "SELECT * FROM category WHERE c_id = '".$id."'";
+                $result = $conn->query($sql_category); 
+                $row = mysqli_fetch_assoc($result);
+ ?>
 
 <body id="page-top">
 
@@ -37,36 +43,17 @@ if($_SESSION['Status'] != "1")
         
 		<div class="container">
         	<div class="justify-content-md-center ">
-            <form>
+            <form action="cate_edit.php" method="post">
             <div class="form-group">
                     <label for="">ลำดับ</label>
-                    <input type="text" class="form-control" id="" placeholder="" disabled>
+                    <input type="text" class="form-control" id="" placeholder="" disabled value="<?php echo $row['c_id']  ?>">
                 </div>
                 <div class="form-group">
-                    <label for="">Password</label>
-                    <input type="password" class="form-control" id="" placeholder="ใส่รหัสผ่าน">
-                </div>
-                <div class="form-group">
-                    <label for="">ชื่อจริง</label>
-                    <input type="text" class="form-control" id="" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="">นามสกุล</label>
-                    <input type="text" class="form-control" id="" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="">เบอร์โทร</label>
-                    <input type="text" class="form-control" id="" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">เพศ</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                    <option>ชาย</option>
-                    <option>หญิง</option>
-                    <option>อื่นๆ</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-warning btn-block"><i class="fas fa-pen-square"></i> แก้ไขสมาชิก</button>
+                    <label for="">ชื่อคอร์สเรียน</label>
+                    <input type="text" class="form-control" id="" name="c_name" placeholder="" value="<?php echo $row['c_name']  ?>">
+                    <input type="hidden" class="form-control" id="" name="id" placeholder="" value="<?php echo $row['c_id']  ?>">
+                </div> 
+                <button type="submit" class="btn btn-warning btn-block"><i class="fas fa-pen-square"></i> แก้ไขประเภท</button>
             </form>
 
            </div>

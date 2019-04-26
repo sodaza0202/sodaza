@@ -71,7 +71,7 @@ if(isset($_POST['submit_category'])){
               <td><?php echo $row["c_name"]; ?></td>
               <td width="20%">
                 <div class="btn-group btn-block" role="group" aria-label="Basic example">
-                    <a href="manager_customer_edit.php?id=<?php echo $row["c_id"]; ?>" class="btn btn-warning"><i class="fas fa-pen-square"></i> แก้ไข</a>
+                    <a href="manager_category_edit.php?id=<?php echo $row["c_id"]; ?>" class="btn btn-warning"><i class="fas fa-pen-square"></i> แก้ไข</a>
                     <a href="manager_category_delete.php?id=<?php echo $row["c_id"]; ?>" class="btn btn-danger"><i class="fas fa-minus-square"></i> ลบ</a>
                 </div>
              </td>
