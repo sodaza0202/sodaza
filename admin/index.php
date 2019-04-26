@@ -24,7 +24,7 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" name="password" placeholder="Password">
                             </div>
-                            <button type="button" id="sendlogin" class="btn btn-primary btn-block">เข้าสู่ระบบ </button>
+                            <button type="button" id="sendlogin" class="btn btn-primary btn-block">เข้าสู่ระบบบบบบ</button>
                         </form>
                     </div>
                 </div>
