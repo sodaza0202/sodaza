@@ -16,7 +16,7 @@ $id = $_POST["id"];
     if ($conn->query($sql) === TRUE) {
         header('Location: manager_customer.php');
     } else {
-        echo "Error updating record: " . $conn->error;
+        echo "Error updating recordd: " . $conn->error;
     }
     $conn->close();
 ?>
