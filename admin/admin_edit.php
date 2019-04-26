@@ -9,7 +9,7 @@ $id = $_POST["id"];
     m_nameb = '".$_POST["m_nameb"]."',
     m_tel = '".$_POST["m_tel"]."',
     m_gender = '".$_POST["m_gender"]."',
-    m_level = '2'
+    m_level = '1'
     WHERE m_id= '$id'";
 
 
