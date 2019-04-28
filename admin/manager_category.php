@@ -43,7 +43,7 @@ if(isset($_POST['submit_category'])){
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="admin.php">ระบบขายน้ำดื่ม</a>
+            <a href="admin.php">ระบบจัดการ</a>
           </li>
           <li class="breadcrumb-item">จัดการสินค้า</li>
           <li class="breadcrumb-item active"><i class="fas fa-plus-square"></i> จัดการคอสเรียน </li>

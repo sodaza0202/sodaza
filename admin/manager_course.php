@@ -46,7 +46,7 @@ if(isset($_POST['submit_course'])){
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="admin.php">ระบบขายน้ำดื่ม</a>
+            <a href="admin.php">ระบบจัดการ</a>
           </li>
           <li class="breadcrumb-item">จัดการสินค้า</li>
           <li class="breadcrumb-item active"><i class="fas fa-plus-square"></i> จัดการคอสเรียน </li>
@@ -130,8 +130,9 @@ if(isset($_POST['submit_course'])){
             <label for="exampleFormControlSelect1">ประเภทคอร์สเรียน</label>
             <select class="form-control" id="" name="course_category">
             <option value="1">PERSONAL TRAINING</option>
-            <option value="2">PHYSIOTHERAPY SERVICE</option>
-            <option value="3">PERSONAL TRAINER CERTIFICATION</option>
+            <option value="2">ลดน้ำหนัก</option>
+            <option value="3">เพื่มกล้ามเนื้อ</option>
+            <option value="4">Online Coaching</option>
             </select>
         </div>
         <div class="form-group">
