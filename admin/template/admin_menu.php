@@ -23,9 +23,9 @@
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="admin.php">
+        <a class="nav-link" href="admin_contact.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>หน้าควบคุม</span>
+          <span>จัดการชื้อขาย</span>
         </a>
       </li>
       <li class="nav-item dropdown show">
@@ -42,7 +42,7 @@
         </div>
       </li>
     
-      <li class="nav-item dropdown show">
+      <li class="nav-item dropdown show"> 
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
           <span>จัดการสมาชิก</span>

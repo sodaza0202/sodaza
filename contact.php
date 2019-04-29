@@ -86,20 +86,19 @@
        
           <div class="col-md-12 col-lg-8 mb-5">
           
-            
           
-            <form action="#" class="p-5 bg-white">
+            <form action="save_contact.php" class="p-5 bg-white" method="post">
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="fullname">Full Name</label>
-                  <input type="text" id="fullname" class="form-control" placeholder="Full Name">
+                  <input type="text" id="fullname" name="name" class="form-control" placeholder="Full Name">
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="email">Email</label>
-                  <input type="email" id="email" class="form-control" placeholder="Email Address">
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Email Address">
                 </div>
               </div>
 
@@ -107,14 +106,14 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label class="font-weight-bold" for="phone">Phone</label>
-                  <input type="text" id="phone" class="form-control" placeholder="Phone #">
+                  <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone #">
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="message">Message</label> 
-                  <textarea name="message" id="message" cols="30" rows="5" class="form-control" placeholder="Say hello to us"></textarea>
+                  <textarea id="message" name="address" cols="30" rows="5" class="form-control" placeholder="Say hello to us"></textarea>
                 </div>
               </div>
 

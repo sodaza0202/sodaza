@@ -26,7 +26,12 @@ if(isset($_POST['submit_course'])){
         $course_age = $_POST['course_age'];
         $course_price = $_POST['course_price'];
 
-        $sql = "INSERT INTO course (course_id, course_name, course_category , course_session , course_age , course_price) VALUES (NULL ,'".$course_name."','".$course_category."','".$course_section."','".$course_age."','".$course_price."')";
+            $fileinfo=PATHINFO($_FILES["filUpload"]["name"]);
+            $newFilename=$fileinfo['filename'] ."_". time() . "." . $fileinfo['extension'];
+            move_uploaded_file($_FILES["filUpload"]["tmp_name"],"images/" . $newFilename);
+            $location=$newFilename;
+
+        $sql = "INSERT INTO course (course_id, course_name, course_category , course_session , course_age , course_price , course_img) VALUES (NULL ,'".$course_name."','".$course_category."','".$course_section."','".$course_age."','".$course_price."','".$location."')";
         $query = mysqli_query($conn,$sql);
         header('Location: manager_course.php');
         exit;    
@@ -70,7 +75,6 @@ if(isset($_POST['submit_course'])){
           <?php
                 $sql_category = "SELECT * FROM course INNER JOIN category ON course.course_category = category.c_id";
                 $result = $conn->query($sql_category); 
-                if ($result->num_rows > 0) { 
                 while($row = $result->fetch_assoc()) {
           ?>
             <tr>
@@ -81,16 +85,12 @@ if(isset($_POST['submit_course'])){
               <td><?php echo $row["course_age"]; ?></td>
               <td><?php echo $row["course_price"]; ?></td>
               <td width="20%">
-                <div class="btn-group btn-block" role="group" aria-label="Basic example">
                     <a href="manager_course_edit.php?id=<?php echo $row["course_id"]; ?>" class="btn btn-warning"><i class="fas fa-pen-square"></i> แก้ไข</a>
                     <a href="manager_course_delete.php?id=<?php echo $row["course_id"]; ?>" class="btn btn-danger"><i class="fas fa-minus-square"></i> ลบ</a>
-                </div>
              </td>
             </tr>
             <?php 
-            } } else {
-                echo "0 Result";
-            } 
+                }
             ?>
           </tbody>
         </table>
@@ -121,7 +121,7 @@ if(isset($_POST['submit_course'])){
         </button>
       </div>
       <div class="modal-body">
-      <form name="addproducts" method="post">
+      <form name="addproducts" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="">ชื่อคอร์สเรียน</label>
             <input type="text" class="form-control" id="" placeholder="" name="course_name">
@@ -147,6 +147,10 @@ if(isset($_POST['submit_course'])){
             <label for="">ราคา</label>
             <input type="text" class="form-control" id="" placeholder="" name="course_price">
         </div>
+        <div class="custom-file">
+              <input type="file" class="custom-file-input" name="filUpload" id="customFile">
+              <label class="custom-file-label"for="customFile">Choose file</label>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>

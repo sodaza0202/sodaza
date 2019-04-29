@@ -125,42 +125,31 @@
         <div class="row">
           <div class="col-md-12 block-13 nav-direction-white">
             <div class="nonloop-block-13 owl-carousel">
-              <div class="media-image">
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-                <div class="media-image-body">
-                  <h2>PERSONAL TRAINING</h2>
-                  <p>ลดไขมัน เพิ่มกล้ามเนื้อ เรียนแบบส่วนตัว กับเทรนเนอร์ผู้เชี่ยวชาญ</p>
-                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">จอง</span></a></p>
-                </div>
-              </div>
-              <div class="media-image">
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-                <div class="media-image-body">
-                  <h2>Online Coaching</h2>
-                  <p>หลักสูตรเรียนออนไลน์ สำหรับนักเรียนที่ไม่สะดวกมาเรียนที่สาขา แต่ต้องการโปรแกรมการออกกำลังกาย 
-                    และโภชนาการ เพื่อการออกกำลังกายอย่างถูกวิธี โดยนักเรียนแต่ละคนจะได้รับการวิเคราะห์จากผู้เชี่ยวชาญ
-                     เพื่อออกแบบโปรแกรมออกกำลังกาย และโภชนาการสำหรับแต่ละคน.</p>
-                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">จอง</span></a></p>
-                </div>
-              </div>
-              <div class="media-image">
-                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-                <div class="media-image-body">
-                  <h2>ลดน้ำหนัก</h2>
-                  <p>สอนการลดน้ำหนักและการออกกำลังกายอย่างถูกต้องสำหรับผู้มีน้ำหนักตัวมากเกินไปต้องการลดน้ำหนัก.</p>
-                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">จอง</span></a></p>
-                </div>
-              </div>
-              <div class="media-image">
-                <img src="images/img_4.jpg" alt="Image" class="img-fluid">
-                <div class="media-image-body">
-                  <h2>เพิ่มกล้ามเนื้อ</h2>
-                  <p>สำหรับคนผอมที่ต้องการทำให้ตนเองดูดีมีกล้ามเนื้อมากขึ้น.</p>
-                  <p><a href="#" class="btn btn-primary text-white px-4"><span class="caption">จอง</span></a></p>
-                </div>
-              </div>
+              <?php 
               
+              $servername = "localhost";
+              $username = "root";
+              $password = "";
+              $dbname = "fitwhey";
+              $conn = new mysqli($servername, $username, $password, $dbname);
+              mysqli_set_charset($conn,"utf8");
+
+              $sql = "SELECT * FROM course INNER JOIN category ON course.course_category = category.c_id";
+              $result = $conn->query($sql);
               
+              while($row = $result->fetch_assoc()) {
+              ?>  
+              <div class="media-image">
+                <img src="admin/images/<?php echo $row["course_img"]?>" alt="Image" class="img-fluid">
+                <div class="media-image-body">
+                  <h2><?php echo $row["c_name"]?></h2>
+                  <p><?php echo $row["course_name"]?></p>
+                  <p>ราคา <?php echo $row["course_price"]?></p>
+                  <p><a href="http://localhost/sodaza/contact.php" class="btn btn-primary text-white px-4"><span class="caption">จอง</span></a></p>
+                </div>
+              </div>
+              <?php } ?>
+  
             </div>
           </div>
         </div>
