@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>fitness &mdash; Colorlib Website Template</title>
+    <title>fitness &mdash; </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -59,7 +59,7 @@
 
                     <ul class="site-menu js-clone-nav d-none d-lg-block">
                       <li class="has-children">
-                        <a href="index.html">หน้าหลัก</a>
+                        <a href="index.php">หน้าหลัก</a>
                         <ul class="dropdown arrow-top">
                           
                           <li class="has-children">
@@ -78,7 +78,7 @@
                      
                       
                       
-                      <li><a href="contact.html">จองคอร์ส</a></li>
+                      <li><a href="contact.php">จองคอร์ส</a></li>
                     </ul>
                   </div>
                 </nav>
